@@ -1,5 +1,6 @@
 interface Localizacao {
-    local: string;
+    sala: string;
+    prateleira: string;
   }
 
   export {Localizacao}
