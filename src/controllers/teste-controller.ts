@@ -20,7 +20,6 @@ class TesteController {
                     piResourceID: '333333',
                 },
             };
-            return this.ResponseWriter.success(response, 200, data);
         } catch (error) {
             this.ResponseWriter.error(response, error as Error);
         }

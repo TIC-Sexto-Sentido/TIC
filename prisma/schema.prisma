@@ -9,8 +9,34 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+model ArquivoAnexado {
+    id_arquivo    Int     @id @default(autoincrement())
+    cod_patrimonio     Int 
+    caminho     String  @db.VarChar(300)
+  }
+
+model Manutencao {
+    cod_manutencao    Int     @id @default(autoincrement())
+    cod_patrimonio    Int     
+    data_manutencao    DateTime
+  }
+
+model Patrimonio {
+   cod_patrimonio    Int     @id @default(autoincrement())
+   tipo_patrimonio     String  @db.VarChar(300)
+   nome_patrimonio     String  @db.VarChar(300)
+   qtde     Int
+   localizacao     Int
+   ativo     Boolean
+}
+
+model TipoPatrimonio {
+    nome String  @id @db.VarChar(300)
+    categoria String  @db.VarChar(300)
+  }
 
 model Localizacao{
-  id        Int     @id @default(autoincrement())
-  local     String  @db.VarChar(300)
+  id_localizacao   Int     @id @default(autoincrement())
+  sala     String   @db.VarChar(300)
+  prateleira     String  @db.VarChar(300)
 }

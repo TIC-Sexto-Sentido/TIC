@@ -1,0 +1,1 @@
+export { PatrimonioService } from './patrimonio-service'
