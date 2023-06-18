@@ -15,6 +15,11 @@ import TipoPatrimonioGet from './tipo-patrimonio/get'
 import TipoPatrimonioGetAll from './tipo-patrimonio/getAll'
 import TipoPatrimonioPost from './tipo-patrimonio/post'
 import TipoPatrimonioPut from './tipo-patrimonio/put'
+import ManutencaoDelete from './manutencao/delete'
+import ManutencaoGet from './manutencao/get'
+import ManutencaoGetAll from './manutencao/getAll'
+import ManutencaoPost from './manutencao/post'
+import ManutencaoPut from './manutencao/put'
 
 const app = express();
 
@@ -39,5 +44,11 @@ app.use(TipoPatrimonioGet);
 app.use(TipoPatrimonioGetAll);
 app.use(TipoPatrimonioPost);
 app.use(TipoPatrimonioPut);
+
+app.use(ManutencaoDelete);
+app.use(ManutencaoGet);
+app.use(ManutencaoGetAll);
+app.use(ManutencaoPost);
+app.use(ManutencaoPut);
 
 export default app;

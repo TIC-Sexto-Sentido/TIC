@@ -6,3 +6,6 @@ export { RedirectServiceLocalizacao } from './localizacao/redirect-service'
 
 export { TipoPatrimonioService } from './tipo-patrimonio/tipo-patrimonio-service'
 export { RedirectServiceTipoPatrimonio } from './tipo-patrimonio/redirect-service'
+
+export { ManutencaoService } from './manutencao/manutencao-service'
+export { RedirectServiceManutencao} from './manutencao/redirect-service'
