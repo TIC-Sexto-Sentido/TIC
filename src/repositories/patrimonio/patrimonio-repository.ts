@@ -1,6 +1,6 @@
-import { PatrimonioDB } from "../models";
-import {prisma} from '../lib/prisma'
-import { ExceptionTreatment } from "../utils";
+import { PatrimonioDB } from "../../models";
+import {prisma} from '../../lib/prisma'
+import { ExceptionTreatment } from "../../utils";
 
 class PatrimonioRepository{
     public async createPatrimonio(patrimonio: PatrimonioDB): Promise<PatrimonioDB | null>{

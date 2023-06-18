@@ -1,5 +1,5 @@
-import { Localizacao } from "./Localizacao"
-import { TipoPatrimonio } from "./TipoPatrimonio";
+import { Localizacao } from "../localizacao/Localizacao"
+import { TipoPatrimonio } from "../tipo-patrimonio/TipoPatrimonio";
 interface Patrimonio {
    cod_patrimonio: number;
    tipo_patrimonio: TipoPatrimonio;

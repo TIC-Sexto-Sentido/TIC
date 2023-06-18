@@ -1,9 +1,9 @@
 import { Response, Request } from 'express';
 import { RequestWithParams } from '../../@types/custom';
-import { LocalizacaoService } from './localizacao-service';
+import { TipoPatrimonioService } from './tipo-patrimonio-service';
 
-class RedirectServiceLocalizacao {
-    private LocalizacaoService = LocalizacaoService;
+class RedirectServiceTipoPatrimonio {
+    private TipoPatrimonioService = TipoPatrimonioService;
 
     public async handle(request: Request, response: Response): Promise<Response> {
         try {
@@ -11,11 +11,11 @@ class RedirectServiceLocalizacao {
                 let data
 
                 if(!request.params.id){
-                    data = await new this.LocalizacaoService()
-                        .getAllLocalizacaos()              
+                    data = await new this.TipoPatrimonioService()
+                        .getAllTipoPatrimonios()              
                 } else {
-                    data = await new this.LocalizacaoService()
-                        .getLocalizacao(Number(request.params.id))
+                    data = await new this.TipoPatrimonioService()
+                        .getTipoPatrimonio(Number(request.params.id))
                 }
 
                 if(data){
@@ -28,8 +28,8 @@ class RedirectServiceLocalizacao {
 
             if(request.method.toString() === 'POST'){
 
-                const data = await new this.LocalizacaoService()
-                    .postLocalizacao(request as unknown as RequestWithParams)
+                const data = await new this.TipoPatrimonioService()
+                    .postTipoPatrimonio(request as unknown as RequestWithParams)
 
                 if(data){
                     return response.status(200).json(data)
@@ -38,8 +38,8 @@ class RedirectServiceLocalizacao {
             } 
 
             if(request.method.toString() === 'PUT'){
-                const data = await new this.LocalizacaoService()
-                    .putLocalizacao(request as unknown as RequestWithParams)
+                const data = await new this.TipoPatrimonioService()
+                    .putTipoPatrimonio(request as unknown as RequestWithParams)
                 
                 if(data){
                     return response.status(200).json(data)
@@ -48,8 +48,8 @@ class RedirectServiceLocalizacao {
             }
 
             if(request.method.toString() === 'DELETE'){
-                const data = await new this.LocalizacaoService()
-                    .deleteLocalizacao(Number(request.params.id))
+                const data = await new this.TipoPatrimonioService()
+                    .deleteTipoPatrimonio(Number(request.params.id))
                 
                 if(data){
                     return response.status(200).json(data)
@@ -66,4 +66,4 @@ class RedirectServiceLocalizacao {
     }
 }
 
-export { RedirectServiceLocalizacao };
+export { RedirectServiceTipoPatrimonio };

@@ -22,7 +22,7 @@ class RedirectService {
                     return response.status(200).json(data)
                 }
                 
-                return response.status(400).send('não houve gravação')
+                return response.status(400).send('não encontrado')
    
             } 
 

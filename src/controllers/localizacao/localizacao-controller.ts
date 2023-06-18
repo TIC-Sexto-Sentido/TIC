@@ -1,6 +1,6 @@
 import { Response, Request } from 'express';
-import { ResponseWriter } from '../utils';
-import { RedirectServiceLocalizacao } from '../services';
+import { ResponseWriter } from '../../utils';
+import { RedirectServiceLocalizacao } from '../../services';
 
 class LocalizacaoController {
     private ResponseWriter = ResponseWriter;

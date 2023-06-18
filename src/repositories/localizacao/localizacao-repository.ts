@@ -1,6 +1,6 @@
-import { Localizacao } from "../models";
-import {prisma} from '../lib/prisma'
-import { ExceptionTreatment } from "../utils";
+import { Localizacao } from "../../models";
+import {prisma} from '../../lib/prisma'
+import { ExceptionTreatment } from "../../utils";
 
 class LocalizacaoRepository{
     public async createLocalizacao(localizacao: Localizacao): Promise<Localizacao | null>{

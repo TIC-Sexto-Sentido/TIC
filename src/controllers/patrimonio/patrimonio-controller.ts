@@ -1,6 +1,6 @@
 import { Response, Request } from 'express';
-import { ResponseWriter } from '../utils';
-import { RedirectService } from '../services';
+import { ResponseWriter } from '../../utils';
+import { RedirectService } from '../../services';
 
 class PatrimonioController {
     private ResponseWriter = ResponseWriter;

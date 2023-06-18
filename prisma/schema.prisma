@@ -31,7 +31,8 @@ model Patrimonio {
 }
 
 model TipoPatrimonio {
-    nome String  @id @db.VarChar(300)
+    id_tipo Int  @id @default(autoincrement())
+    nome String   @db.VarChar(300)
     categoria String  @db.VarChar(300)
   }
 

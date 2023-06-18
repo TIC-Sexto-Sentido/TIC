@@ -10,6 +10,11 @@ import LocalizacaoGet from './localizacao/get'
 import LocalizacaoGetAll from './localizacao/getAll'
 import LocalizacaoPost from './localizacao/post'
 import LocalizacaoPut from './localizacao/put'
+import TipoPatrimonioDelete from './tipo-patrimonio/delete'
+import TipoPatrimonioGet from './tipo-patrimonio/get'
+import TipoPatrimonioGetAll from './tipo-patrimonio/getAll'
+import TipoPatrimonioPost from './tipo-patrimonio/post'
+import TipoPatrimonioPut from './tipo-patrimonio/put'
 
 const app = express();
 
@@ -28,5 +33,11 @@ app.use(LocalizacaoGet);
 app.use(LocalizacaoGetAll);
 app.use(LocalizacaoPost);
 app.use(LocalizacaoPut);
+
+app.use(TipoPatrimonioDelete);
+app.use(TipoPatrimonioGet);
+app.use(TipoPatrimonioGetAll);
+app.use(TipoPatrimonioPost);
+app.use(TipoPatrimonioPut);
 
 export default app;
