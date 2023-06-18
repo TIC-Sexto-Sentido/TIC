@@ -50,11 +50,11 @@ app.use(TipoPatrimonioGetAll);
 app.use(TipoPatrimonioPost);
 app.use(TipoPatrimonioPut);
 
-app.use(ArquivoDelete);
-app.use(ArquivoGet);
-app.use(ArquivoGetAll);
-app.use(ArquivoPost);
-app.use(ArquivoPut);
+app.use(ManutencaoDelete);
+app.use(ManutencaoGet);
+app.use(ManutencaoGetAll);
+app.use(ManutencaoPost);
+app.use(ManutencaoPut);
 
 app.use(ArquivoDelete);
 app.use(ArquivoGet);
