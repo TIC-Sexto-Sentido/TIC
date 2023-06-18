@@ -67,10 +67,10 @@ class PatrimonioRepository{
                         cod_patrimonio: Number(patrimonio.cod_patrimonio)
                     },
                     data: {
-                        tipo_patrimonio:  patrimonio.tipo_patrimonio,
-                        nome_patrimonio:  patrimonio.nome_patrimonio,
+                        tipo_patrimonio: Number(patrimonio.tipo_patrimonio),
+                        nome_patrimonio: patrimonio.nome_patrimonio,
                         qtde: Number(patrimonio.qtde),
-                        localizacao:  Number(patrimonio.localizacao),
+                        localizacao: Number(patrimonio.localizacao),
                         ativo:  Boolean(patrimonio.ativo)
                     }
                 }

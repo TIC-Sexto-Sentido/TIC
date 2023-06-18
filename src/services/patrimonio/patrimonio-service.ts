@@ -1,16 +1,20 @@
 import { Patrimonio, PatrimonioDB } from "../../models";
 import { RequestWithParams } from '../../@types/custom';
 import { PatrimonioRepository } from "../../repositories";
+import { BuildPatrimonio } from "../../utils";
 
 class PatrimonioService{
     private PatrimonioRepository = PatrimonioRepository;
+    private BuildPatrimonio = BuildPatrimonio;
     
     public async getAllPatrimonios(): Promise<Patrimonio[] | null>{
         try{
             const patrimonios = await new this.PatrimonioRepository().getAllPatrimonios()
 
             if(patrimonios){
-                const patrimoniosView = patrimonios.map((pat) => pat as unknown as Patrimonio)
+                const patrimoniosView = await Promise.all(patrimonios.map(async (pat) => 
+                    await new this.BuildPatrimonio().buildPatrimonio(pat)
+                ))
                 return patrimoniosView
             }
 
@@ -24,9 +28,13 @@ class PatrimonioService{
 
     public async getPatrimonio(id: number): Promise<Patrimonio | null>{
         try{
-            const patrimonio = await new this.PatrimonioRepository().getPatrimonio(id)
+            const patrimonioDB = await new this.PatrimonioRepository().getPatrimonio(id)
+            let patrimonio = null
 
-            return patrimonio as unknown as Patrimonio
+            if(patrimonioDB){
+                patrimonio = await new this.BuildPatrimonio().buildPatrimonio(patrimonioDB)
+            }
+            return patrimonio 
 
         } catch (error){
             console.log(error)

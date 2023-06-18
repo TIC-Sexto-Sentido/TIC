@@ -23,7 +23,7 @@ model Manutencao {
 
 model Patrimonio {
    cod_patrimonio    Int     @id @default(autoincrement())
-   tipo_patrimonio     String  @db.VarChar(300)
+   tipo_patrimonio     Int  
    nome_patrimonio     String  @db.VarChar(300)
    qtde     Int
    localizacao     Int
