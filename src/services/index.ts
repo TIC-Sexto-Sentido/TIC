@@ -9,3 +9,6 @@ export { RedirectServiceTipoPatrimonio } from './tipo-patrimonio/redirect-servic
 
 export { ManutencaoService } from './manutencao/manutencao-service'
 export { RedirectServiceManutencao} from './manutencao/redirect-service'
+
+export { ArquivoAnexadoService } from './arquivo-anexado/arquivo-anexado-service'
+export { RedirectServiceArquivoAnexado } from './arquivo-anexado/redirect-service'

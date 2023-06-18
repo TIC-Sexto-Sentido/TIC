@@ -20,6 +20,11 @@ import ManutencaoGet from './manutencao/get'
 import ManutencaoGetAll from './manutencao/getAll'
 import ManutencaoPost from './manutencao/post'
 import ManutencaoPut from './manutencao/put'
+import ArquivoDelete from './arquivo-anexado/delete'
+import ArquivoGet from './arquivo-anexado/get'
+import ArquivoGetAll from './arquivo-anexado/getAll'
+import ArquivoPost from './arquivo-anexado/post'
+import ArquivoPut from './arquivo-anexado/put'
 
 const app = express();
 
@@ -45,10 +50,16 @@ app.use(TipoPatrimonioGetAll);
 app.use(TipoPatrimonioPost);
 app.use(TipoPatrimonioPut);
 
-app.use(ManutencaoDelete);
-app.use(ManutencaoGet);
-app.use(ManutencaoGetAll);
-app.use(ManutencaoPost);
-app.use(ManutencaoPut);
+app.use(ArquivoDelete);
+app.use(ArquivoGet);
+app.use(ArquivoGetAll);
+app.use(ArquivoPost);
+app.use(ArquivoPut);
+
+app.use(ArquivoDelete);
+app.use(ArquivoGet);
+app.use(ArquivoGetAll);
+app.use(ArquivoPost);
+app.use(ArquivoPut);
 
 export default app;
