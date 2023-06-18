@@ -1,14 +1,21 @@
-import { Patrimonio, PatrimonioDB } from "../models";
-import { RequestWithParams } from '../@types/custom';
-import { PatrimonioRepository } from "../repositories";
+import { Patrimonio, PatrimonioDB } from "../../models";
+import { RequestWithParams } from '../../@types/custom';
+import { PatrimonioRepository } from "../../repositories";
 
 class PatrimonioService{
     private PatrimonioRepository = PatrimonioRepository;
+    
     public async getAllPatrimonios(): Promise<Patrimonio[] | null>{
         try{
-            const patrimonios = await new PatrimonioRepository().getAllPatrimonios()
-            const patrimoniosView = patrimonios.map((pat) => pat as unknown as Patrimonio)
-            return patrimoniosView
+            const patrimonios = await new this.PatrimonioRepository().getAllPatrimonios()
+
+            if(patrimonios){
+                const patrimoniosView = patrimonios.map((pat) => pat as unknown as Patrimonio)
+                return patrimoniosView
+            }
+
+            return null
+            
         } catch(error){
             console.log(error)
             throw new Error(`503: serviço indisponivel`);
@@ -17,22 +24,23 @@ class PatrimonioService{
 
     public async getPatrimonio(id: number): Promise<Patrimonio | null>{
         try{
-            const patrimonio = await new PatrimonioRepository().getPatrimonio(id)
+            const patrimonio = await new this.PatrimonioRepository().getPatrimonio(id)
+
             return patrimonio as unknown as Patrimonio
+
         } catch (error){
             console.log(error)
             throw new Error(`503: serviço indisponivel`);
         }
     }
 
-    public async postPatrimonio(request: RequestWithParams): Promise<{status: number, message: string}>{
+    public async postPatrimonio(request: RequestWithParams): Promise<PatrimonioDB | null>{
         try{
             const patrimonio = request.body as unknown as PatrimonioDB
-            const salvo = await new PatrimonioRepository().createPatrimonio(patrimonio)
-            if(salvo){
-                return {status: 200, message: "gravado com sucesso"}
-            }
-            return {status: 403, message: "erro na gravação"}
+            const patrimonioDb = await new this.PatrimonioRepository().createPatrimonio(patrimonio)
+            
+            return patrimonioDb
+
         } catch(error) {
             console.log(error)
             throw new Error(`503: serviço indisponivel`);
@@ -43,9 +51,10 @@ class PatrimonioService{
     public async putPatrimonio(request: RequestWithParams): Promise<Patrimonio | null>{
         try{
             const patrimonio = request.body as unknown as PatrimonioDB
-            const updated = await new PatrimonioRepository().putPatrimonio(patrimonio)
+            const updated = await new this.PatrimonioRepository().putPatrimonio(patrimonio)
             
             return updated as unknown as Patrimonio
+
         } catch(error) {
             console.log(error)
             throw new Error(`503: serviço indisponivel`);
@@ -54,8 +63,9 @@ class PatrimonioService{
 
     public async deletePatrimonio(id: number): Promise<Patrimonio | null>{
         try{
-            const patrimonio = await new PatrimonioRepository().deletePatrimonio(id)
+            const patrimonio = await new this.PatrimonioRepository().deletePatrimonio(id)
             return patrimonio as unknown as Patrimonio
+
         } catch (error){
             console.log(error)
             throw new Error(`503: serviço indisponivel`);

@@ -1,10 +1,10 @@
 import { Response, Request } from 'express';
 import { ResponseWriter } from '../utils';
-import { RedirectService } from '../services';
+import { RedirectServiceLocalizacao } from '../services';
 
-class PatrimonioController {
+class LocalizacaoController {
     private ResponseWriter = ResponseWriter;
-    private RedirectService = RedirectService;
+    private RedirectService = RedirectServiceLocalizacao;
 
     public async handle(request: Request, response: Response): Promise<void> {
         try {
@@ -18,4 +18,4 @@ class PatrimonioController {
     }
 }
 
-export { PatrimonioController };
+export { LocalizacaoController };

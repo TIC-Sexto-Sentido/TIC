@@ -3,7 +3,7 @@ import {prisma} from '../lib/prisma'
 import { ExceptionTreatment } from "../utils";
 
 class PatrimonioRepository{
-    public async createPatrimonio(patrimonio: PatrimonioDB): Promise<boolean>{
+    public async createPatrimonio(patrimonio: PatrimonioDB): Promise<PatrimonioDB | null>{
         try{
             const dbPatrimonio = await prisma.patrimonio.create(
                 {
@@ -17,15 +17,12 @@ class PatrimonioRepository{
                     }
                 }
             )
-
-            if(!dbPatrimonio ){
-                return false
-            }
             
-            return true
+            return dbPatrimonio
 
         } catch (error){
             console.log(error)
+
             throw new ExceptionTreatment(
                 error as Error,
                 503,
@@ -33,7 +30,7 @@ class PatrimonioRepository{
             );
         }
     }
-    public async getAllPatrimonios(): Promise<PatrimonioDB[]>{
+    public async getAllPatrimonios(): Promise<PatrimonioDB[] | null>{
         try{
             const dbPatrimonio = await prisma.patrimonio.findMany()
            
@@ -41,6 +38,7 @@ class PatrimonioRepository{
 
         } catch (error){
             console.log(error)
+
             throw new Error(`503: serviço indisponivel`);
         }
     }
@@ -57,10 +55,11 @@ class PatrimonioRepository{
 
         } catch (error){
             console.log(error)
+
             throw new Error(`503: serviço indisponivel`);
         }
     }
-    public async putPatrimonio(patrimonio: PatrimonioDB): Promise<PatrimonioDB>{
+    public async putPatrimonio(patrimonio: PatrimonioDB): Promise<PatrimonioDB | null>{
         try{
             const dbPatrimonio = await prisma.patrimonio.update(
                 {
@@ -77,11 +76,11 @@ class PatrimonioRepository{
                 }
             )
 
-            
             return dbPatrimonio
 
         } catch (error){
             console.log(error)
+
             throw new ExceptionTreatment(
                 error as Error,
                 503,
@@ -89,7 +88,7 @@ class PatrimonioRepository{
             );
         }
     }
-    public async deletePatrimonio(id: number): Promise<PatrimonioDB>{
+    public async deletePatrimonio(id: number): Promise<PatrimonioDB | null>{
         try{
             const dbPatrimonio = await prisma.patrimonio.delete(
                 {
@@ -104,6 +103,7 @@ class PatrimonioRepository{
 
         } catch (error){
             console.log(error)
+            
             throw new ExceptionTreatment(
                 error as Error,
                 503,
