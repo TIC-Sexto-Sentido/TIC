@@ -5,6 +5,7 @@ interface PatrimonioDB {
    qtde: number;
    localizacao: number;
    ativo: boolean;
+   id_usuario: number;
 }
 
 export {PatrimonioDB}

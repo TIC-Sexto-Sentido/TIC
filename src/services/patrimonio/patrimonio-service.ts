@@ -42,6 +42,25 @@ class PatrimonioService{
         }
     }
 
+    public async getPatrimonioUsuario(id: number): Promise<Patrimonio[] | null>{
+        try{
+            const patrimonioDB = await new this.PatrimonioRepository().getPatrimonioUsuario(id)
+
+            if(patrimonioDB){
+                const patrimoniosView = await Promise.all(patrimonioDB.map(async (pat) => 
+                    await new this.BuildPatrimonio().buildPatrimonio(pat)
+                ))
+                return patrimoniosView
+            }
+
+            return null
+
+        } catch (error){
+            console.log(error)
+            throw new Error(`503: serviço indisponivel`);
+        }
+    }
+
     public async postPatrimonio(request: RequestWithParams): Promise<PatrimonioDB | null>{
         try{
             const patrimonio = request.body as unknown as PatrimonioDB

@@ -13,6 +13,9 @@ class RedirectService {
                 if(!request.params.id){
                     data = await new this.PatrimonioService()
                         .getAllPatrimonios()              
+                } else if(request.params.usuario) {
+                    data = await new this.PatrimonioService()
+                        .getPatrimonioUsuario(Number(request.params.usuario))
                 } else {
                     data = await new this.PatrimonioService()
                         .getPatrimonio(Number(request.params.id))

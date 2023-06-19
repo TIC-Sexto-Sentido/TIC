@@ -28,6 +28,7 @@ model Patrimonio {
    qtde     Int
    localizacao     Int
    ativo     Boolean
+   id_usuario     Int
 }
 
 model TipoPatrimonio {

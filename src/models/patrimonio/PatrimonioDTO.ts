@@ -7,6 +7,7 @@ interface Patrimonio {
    qtde: number;
    localizacao: Localizacao;
    ativo: boolean;
+   id_usuario: number;
 }
 
 export {Patrimonio}

@@ -13,7 +13,8 @@ class PatrimonioRepository{
                         nome_patrimonio:  patrimonio.nome_patrimonio,
                         qtde: Number(patrimonio.qtde),
                         localizacao:  Number(patrimonio.localizacao),
-                        ativo:  Boolean(patrimonio.ativo)
+                        ativo:  Boolean(patrimonio.ativo),
+                        id_usuario: Number(patrimonio.id_usuario)
                     }
                 }
             )
@@ -48,6 +49,22 @@ class PatrimonioRepository{
             const dbPatrimonio = await prisma.patrimonio.findFirst({
                 where: {
                     cod_patrimonio: id
+                }
+            })
+            
+            return dbPatrimonio;
+
+        } catch (error){
+            console.log(error)
+
+            throw new Error(`503: serviço indisponivel`);
+        }
+    }
+    public async getPatrimonioUsuario(id: number): Promise<PatrimonioDB[] | null>{
+        try{
+            const dbPatrimonio = await prisma.patrimonio.findMany({
+                where: {
+                    id_usuario: id
                 }
             })
             

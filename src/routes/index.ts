@@ -2,6 +2,7 @@ import express from 'express';
 import Teste from './teste';
 import PatrimonioDelete from './patrimonio/delete'
 import PatrimonioGet from './patrimonio/get'
+import PatrimonioGetUser from './patrimonio/get-by-user'
 import PatrimonioGetAll from './patrimonio/getAll'
 import PatrimonioPost from './patrimonio/post'
 import PatrimonioPut from './patrimonio/put'
@@ -38,6 +39,7 @@ app.use(express.json());
 app.use(Teste);
 app.use(PatrimonioDelete);
 app.use(PatrimonioGet);
+app.use(PatrimonioGetUser);
 app.use(PatrimonioGetAll);
 app.use(PatrimonioPost);
 app.use(PatrimonioPut);
