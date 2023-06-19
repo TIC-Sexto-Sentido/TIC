@@ -7,7 +7,7 @@ class UsuarioService{
 
     public async getUsuario(request: RequestWithParams): Promise<Usuario | null>{
         try{
-            const body = request as unknown as Usuario
+            const body = request.body as unknown as Usuario
             const usuario = await new this.UsuarioRepository().getUsuario(body)
 
             return usuario
