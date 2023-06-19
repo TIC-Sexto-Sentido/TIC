@@ -25,6 +25,10 @@ import ArquivoGet from './arquivo-anexado/get'
 import ArquivoGetAll from './arquivo-anexado/getAll'
 import ArquivoPost from './arquivo-anexado/post'
 import ArquivoPut from './arquivo-anexado/put'
+import UsuarioDelete from './usuario/delete'
+import UsuarioGet from './usuario/get'
+import UsuarioPost from './usuario/post'
+import UsuarioPut from './usuario/put'
 
 const app = express();
 
@@ -61,5 +65,10 @@ app.use(ArquivoGet);
 app.use(ArquivoGetAll);
 app.use(ArquivoPost);
 app.use(ArquivoPut);
+
+app.use(UsuarioDelete);
+app.use(UsuarioGet);
+app.use(UsuarioPost);
+app.use(UsuarioPut);
 
 export default app;

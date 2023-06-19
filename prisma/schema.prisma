@@ -41,3 +41,9 @@ model Localizacao{
   sala     String   @db.VarChar(300)
   prateleira     String  @db.VarChar(300)
 }
+
+model Usuario{
+  id_usuario   Int     @id @default(autoincrement())
+  email     String   @db.VarChar(300)
+  senha     String  @db.VarChar(300)
+}

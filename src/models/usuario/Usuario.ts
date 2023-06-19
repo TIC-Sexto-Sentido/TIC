@@ -1,9 +1,7 @@
 interface Usuario {
-    id: number
-    nome: string;
+    id_usuario: number
     email: string;
     senha: string;
-    cargo: string;
   }
   export {Usuario}
   
