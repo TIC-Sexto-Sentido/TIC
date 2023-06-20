@@ -1,8 +1,8 @@
-export { Brinquedos } from "./Brinquedos";
-export {Eletronicos} from "./Eletronicos";
-export{ Inventario } from "./Inventario";
-export{ Localizacao } from "./Localizacao";
-export{ MateriaisEscolares } from "./MateriaisEscolares";
-export{ Mobiliario } from "./Mobiliario";
-export{ Produto } from "./Produto";
-export{ Usuario } from "./Usuario";
+export { ArquivoAnexado } from './arquivos-anexados/ArquivoAnexado'
+export{ Localizacao } from './localizacao/Localizacao';
+export { Manutencao } from './manutencao/ManutencaoDB'
+export { ManutencaoDTO } from './manutencao/ManutencaoDTO'
+export{ Patrimonio } from './patrimonio/PatrimonioDTO';
+export{ PatrimonioDB } from './patrimonio/PatrimonioDB';
+export { TipoPatrimonio } from './tipo-patrimonio/TipoPatrimonio'
+export{ Usuario } from './usuario/Usuario';

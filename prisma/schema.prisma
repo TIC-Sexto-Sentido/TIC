@@ -1,0 +1,50 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+model ArquivoAnexado {
+    id_arquivo    Int     @id @default(autoincrement())
+    cod_patrimonio     Int 
+    caminho     String  @db.VarChar(300)
+  }
+
+model Manutencao {
+    cod_manutencao    Int     @id @default(autoincrement())
+    cod_patrimonio    Int     
+    data_manutencao    String
+  }
+
+model Patrimonio {
+   cod_patrimonio    Int     @id @default(autoincrement())
+   tipo_patrimonio     Int  
+   nome_patrimonio     String  @db.VarChar(300)
+   qtde     Int
+   localizacao     Int
+   ativo     Boolean
+   id_usuario     Int
+}
+
+model TipoPatrimonio {
+    id_tipo Int  @id @default(autoincrement())
+    nome String   @db.VarChar(300)
+    categoria String  @db.VarChar(300)
+  }
+
+model Localizacao{
+  id_localizacao   Int     @id @default(autoincrement())
+  sala     String   @db.VarChar(300)
+  prateleira     String  @db.VarChar(300)
+}
+
+model Usuario{
+  id_usuario   Int     @id @default(autoincrement())
+  email     String   @db.VarChar(300)
+  senha     String  @db.VarChar(300)
+}
