@@ -36,7 +36,7 @@ class UsuarioRepository{
                 }
             })
             if(usuario.email === dbusuario.email && usuario.senha === dbusuario.senha){
-                return dbusuario
+                return dbusuario //logica necessaria pois "find first or throw estava retornando o primeiro"
             }
             
             return null;
