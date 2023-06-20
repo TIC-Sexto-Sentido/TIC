@@ -29,14 +29,17 @@ class UsuarioRepository{
 
     public async getUsuario(usuario: Usuario): Promise<Usuario | null>{
         try{
-            const dbusuario = await prisma.usuario.findFirst({
+            const dbusuario = await prisma.usuario.findFirstOrThrow({
                 where: {
                     email: usuario.email,
                     senha: usuario.senha
                 }
             })
+            if(usuario.email === dbusuario.email && usuario.senha === dbusuario.senha){
+                return dbusuario
+            }
             
-            return dbusuario;
+            return null;
 
         } catch (error){
             console.log(error)
