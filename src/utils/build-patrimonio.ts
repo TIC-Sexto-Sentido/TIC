@@ -10,10 +10,10 @@ class BuildPatrimonio{
             let patrimonio = patrimonioDB as unknown as Patrimonio
 
             const tipo = await new this.TipoPatrimonioService()
-                .getTipoPatrimonio(patrimonioDB.cod_patrimonio)
+                .getTipoPatrimonio(patrimonioDB.tipo_patrimonio)
             const local = await new this.LocalizacaoService()
                 .getLocalizacao(patrimonioDB.localizacao)
-            
+                
             tipo? patrimonio.tipo_patrimonio = tipo : null
             local? patrimonio.localizacao = local : null
 
