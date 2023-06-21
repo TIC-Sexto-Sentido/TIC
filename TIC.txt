@@ -1,5 +1,5 @@
 OBSERVAÇÕES:
-- A entidade arquivos anexados não foi implementada no front pois ainda estamos desenvolvendo a lógica de anexar um arquivo para cada patrimonio.
+- A entidade arquivos anexados não foi implementada no front pois ainda estamos desenvolvendo a lógica de anexar um arquivo para cada patrimônio.
 - As entidades: Tipos de Patrimônios e Localizações são entidades auxiliares a 'Patrimônios', logo não faria sentido mostrar apenas as cadastradas por um único usuario. Por esse motivo não colocamos essa limitação.
 - Cada usuario pode cadastrar a manutenção apenas dos patrimônios cadastrados por si mesmo, porém podem consultar todas as ocorrências de manutenção.
 - Para rodar o projeto é necessário o banco de dados MySql, basta mudar o usuário e senha no arquivo .env.
