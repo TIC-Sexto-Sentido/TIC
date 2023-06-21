@@ -1,7 +1,7 @@
 OBSERVAÇÕES:
-A entidade arquivos anexados não foi implementada no front pois ainda estamos desenvolvendo a logica de anexar um arquivo para cada patrimonio.
-As entidades: Tipos de Patrimonios e Localizações são entidades auxiliares a 'Patrimonios', logo não faria sentido mostrar apenas as cadastradas por um unico usuario, por esse motivo não colocamos essa limitação.
-Cada usuario pode cadastrar a manutenção apenas dos patrimonios cadastrasdos por si mesmo, porém podem consultar todas as ocorrencias de manutenção.
-Para rodar o projeto é necessario o banco de dados MySql, basta mudar o usuario em senha no arquivo .env
-O comando para rodar a API é yarn dev
-O comando para rodar o front é yarn start
+- A entidade arquivos anexados não foi implementada no front pois ainda estamos desenvolvendo a lógica de anexar um arquivo para cada patrimonio.
+- As entidades: Tipos de Patrimônios e Localizações são entidades auxiliares a 'Patrimônios', logo não faria sentido mostrar apenas as cadastradas por um único usuario. Por esse motivo não colocamos essa limitação.
+- Cada usuario pode cadastrar a manutenção apenas dos patrimônios cadastrados por si mesmo, porém podem consultar todas as ocorrências de manutenção.
+- Para rodar o projeto é necessário o banco de dados MySql, basta mudar o usuário e senha no arquivo .env.
+- O comando para rodar a API é yarn dev
+- O comando para rodar o front-end é yarn start
