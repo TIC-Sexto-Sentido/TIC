@@ -30,6 +30,7 @@ import UsuarioDelete from './usuario/delete'
 import UsuarioGet from './usuario/get'
 import UsuarioPost from './usuario/post'
 import UsuarioPut from './usuario/put'
+import UsuarioVerifica from './usuario/verifyPost'
 
 const app = express();
 
@@ -72,5 +73,6 @@ app.use(UsuarioDelete);
 app.use(UsuarioGet);
 app.use(UsuarioPost);
 app.use(UsuarioPut);
+app.use(UsuarioVerifica);
 
 export default app;

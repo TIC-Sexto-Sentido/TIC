@@ -5,3 +5,4 @@ export { TipoPatrimonioController } from './tipo-patrimonio/tipo-patrimonio-cont
 export { ManutencaoController } from './manutencao/manutencao-controller'
 export { ArquivoAnexadoController } from './arquivo-anexado/arquivo-anexado-controller'
 export { UsuarioController } from './usuario/usuario-controller'
+export { UsuarioVerificaController } from './usuario/usuario-verifica-controller'

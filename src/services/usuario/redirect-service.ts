@@ -7,18 +7,6 @@ class RedirectServiceUsuario {
 
     public async handle(request: Request, response: Response): Promise<Response> {
         try {
-            if(request.method.toString() === 'GET'){
-
-                const data = await new this.UsuarioService()
-                        .getUsuario(request as unknown as RequestWithParams)
-
-                if(data){
-                    return response.status(200).json(data)
-                }
-                
-                return response.status(400).send('não encontrado')
-   
-            } 
 
             if(request.method.toString() === 'POST'){
 

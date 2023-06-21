@@ -15,3 +15,4 @@ export { RedirectServiceArquivoAnexado } from './arquivo-anexado/redirect-servic
 
 export { UsuarioService } from './usuario/usuario-service'
 export { RedirectServiceUsuario } from './usuario/redirect-service'
+export { RedirectServiceUsuarioVerifica } from './usuario/redirect-verifica'
