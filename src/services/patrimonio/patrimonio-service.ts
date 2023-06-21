@@ -44,6 +44,7 @@ class PatrimonioService{
 
     public async getPatrimonioUsuario(id: number): Promise<Patrimonio[] | null>{
         try{
+            console.log(id)
             const patrimonioDB = await new this.PatrimonioRepository().getPatrimonioUsuario(id)
 
             if(patrimonioDB){
